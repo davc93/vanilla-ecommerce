@@ -1,4 +1,5 @@
 export class Card {
+  public icons: string[]
 
   constructor(
     public img: string,
@@ -6,8 +7,12 @@ export class Card {
     public titleText: string,
     public htmlClass: string = 'card',
     public text: string,
+    ...icons: string[]
 
-  ){  }
+
+  ){
+    this.icons = icons
+   }
 
   build(){
     const article = document.createElement('article');
@@ -20,6 +25,14 @@ export class Card {
     const textNode = document.createElement('p');
     textNode.textContent = this.text;
     article.append(img,title,textNode);
+
+    this.icons.forEach((item)=>{
+      const svgContainer = document.createElement('div');
+      svgContainer.innerHTML = item;
+      article.append(svgContainer);
+    })
+
+
     return article;
 
   }

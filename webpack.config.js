@@ -31,9 +31,9 @@ module.exports = {
   plugins:[
     new CopyPlugin({
       patterns: [
-        // { from: "./public/index.html", to: "./index.html" },
+        { from: "./public/index.html", to: "./index.html" },
         { from: "./public/styles", to: "./styles" },
-        { from: "./public/assets/images/Logo.png", to: "./assets/images/Logo.png" },
+        // { from: "./public/assets/images/Logo.png", to: "./assets/images/Logo.png" },
 
       ],
     })
